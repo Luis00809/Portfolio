@@ -29,7 +29,7 @@ const router = createBrowserRouter([
                 element: <ContactPage />,
             },
             {
-                path: 'resume',
+                path: '/resume',
                 element: <ResumePage />
             },
         ],

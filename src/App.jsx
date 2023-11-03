@@ -4,8 +4,10 @@ import { Outlet } from "react-router-dom";
 function App() {
     return (
         <>
-             {/* <Nav /> */}
-            <Outlet />
+             <Nav />
+             <main>
+                <Outlet />
+             </main>
         </>
     );
 }
