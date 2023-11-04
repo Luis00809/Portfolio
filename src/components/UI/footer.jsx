@@ -3,14 +3,14 @@
     linkStyle: {
         border: "none"
     },
-    footer: {
-        marginTop: 'auto'
-    }
+    // footer: {
+    //     marginTop: 'auto'
+    // }
  }
  
  function Footer () {
     return (
-      <footer className="footer" style={styles.footer}>
+      <footer>
         <div className="container d-flex justify-content-center ">
             <ul className="row">
                 <li style={styles.linkStyle} className="list-group-item col-4">
