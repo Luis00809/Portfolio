@@ -1,15 +1,22 @@
 const styles = {
     image: {
         borderRadius: "50%",
-        border: "4px solid white",
+        border: "4px solid rgb(2, 62, 138)",
         marginBottom: '50px',
         marginTop: '25px'
     },
     nameP: {
         fontSize: '70px',
+        color: "rgb(3, 4, 94)"
     },
     pHeight: {
         height: '12px'
+    },
+    pColor: {
+        color: "rgb(12, 24, 33)"
+    },
+    subHead:{
+        color: 'rgb(0, 119, 182)'
     }
     
     
@@ -27,8 +34,8 @@ export default function About() {
                 <div className=" col-sm-12">
                     <p className="fs-5"> Hello! My name is </p>
                     <p style={styles.nameP} >Luis David Carbajal</p>
-                    <p className="fs-2">I am web-developer</p>
-                    <p className="fs-5">
+                    <p style={styles.subHead} className="fs-2">I am web-developer</p>
+                    <p style={styles.pColor} className="fs-5">
                         I am currently in a coding bootcamp where I am learning how to create a full-stack application.
                         I came into this bootcamp without any prior knowledge in programming and yet it has been a fun experience.
                         Before joining this bootcamp I received my bachelor's degree in Psychology but have decided to change my career path one year out of undergrad.
