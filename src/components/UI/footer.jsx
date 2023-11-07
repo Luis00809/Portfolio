@@ -11,7 +11,7 @@
  function Footer () {
     return (
       <footer>
-        <div className="container d-flex justify-content-center ">
+        {/* <div className="container d-flex justify-content-center ">
             <ul className="row">
                 <li style={styles.linkStyle} className="list-group-item col-4">
                     <a target="_blank" href="https://github.com/Luis00809?tab=repositories">
@@ -29,7 +29,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> */}
       </footer>  
         
     )    

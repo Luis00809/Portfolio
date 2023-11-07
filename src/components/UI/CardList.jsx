@@ -1,25 +1,49 @@
 
 const styles = {
     size: {
-        width: '250px',
-        height: '250px'
+        width: '300px',
+        height: '300px',
+        border: "2px solid rgb(2, 62, 138)",
+        borderRadius: "35px"
+    
+    },
+    bottomSpacer: {
+        marginBottom: '40px',
+
+    },
+    title: {
+       position: 'relative',
+       bottom: "10px"
+    },
+    backColor: {
+        background: "rgb(173, 232, 244)",
+        border: 'none'
     }
+    
 }
 
 function Cardlist(props) {
     return (
-        <div className="container">
-            <div className="row d-flex flex-wrap gx-2 ">
+        <div className="container ">
+            <div className="d-flex flex-wrap justify-content-center gx-2">
                 {props.project.map(item => (
-                    <div key={item.id} className="col-lg-4 col-md-5 col-sm-6">
-                        <img style={styles.size} src={item.src} alt={item.name} />
-                        <h2>{item.name}</h2>
-                        <p>{item.description}</p>
-                    </div>
+                   <div style={styles.backColor} key={item.id} className="card col-md-6 col-lg-4 d-flex flex-column align-items-center" >
+                        <a target="_blank" href={item.link}>
+                        <img style={styles.size} src={item.src} className="card-img-top" alt={item.name}/>
+                        </a>
+                       <div className="card-body">
+                           <h5 style={styles.title} className="card-title text-center ">{item.name}</h5>
+                       </div>
+                   </div>
                 ))}
             </div>
         </div>
     )
-};
+ };
+ 
+
+
+
+
 
 export default Cardlist;
