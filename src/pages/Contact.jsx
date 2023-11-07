@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const styles = {
     box: {
-        border: "2px solid black",
+        // border: "2px solid black",
         marginTop: "8rem",
         height: "500px"
     }
@@ -95,7 +95,9 @@ export default function Contact() {
 
                     </textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <div className='d-flex justify-content-center '>
+                    <button type="submit" className="btn btn-primary mt-3">Submit</button>
+                </div>
             </form>
             {errorMessage && (
                 <div>
