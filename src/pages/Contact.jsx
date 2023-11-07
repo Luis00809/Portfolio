@@ -48,6 +48,8 @@ export default function Contact() {
             return;
         };
 
+        
+
         alert(`Thank you for reaching out ${name}!`)
         setName('');
         setEmail('');
@@ -101,7 +103,7 @@ export default function Contact() {
             </form>
             {errorMessage && (
                 <div>
-                    <p className='error-text'>{errorMessage}</p>
+                    <p className='text-center m-2'>*{errorMessage}*</p>
                 </div>
             )}
         </div>
