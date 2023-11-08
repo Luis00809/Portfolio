@@ -1,35 +1,48 @@
  
  const styles = { 
-    linkStyle: {
-        border: "none"
+    imgSize: {
+        width: "40px",
+        height: "40px"
     },
-    // footer: {
-    //     marginTop: 'auto'
-    // }
+    boxSize:{
+        display: "flex",
+        justifyContent: "center",
+        width: "40px"
+    },
+    parentBox: {
+        width: "100%",
+    },
+    border: {
+        borderTop: "1px solid black",
+        marginTop: '20px',
+        paddingTop: "20px",
+    }
  }
  
  function Footer () {
     return (
-      <footer>
-        {/* <div className="container d-flex justify-content-center ">
-            <ul className="row">
-                <li style={styles.linkStyle} className="list-group-item col-4">
+      <footer style={styles.border}>
+        <div className="container d-flex justify-content-center">
+            <div style={styles.parentBox} className="row d-flex justify-content-evenly ">
+                <div style={styles.boxSize} className=" col-4 ">
                     <a target="_blank" href="https://github.com/Luis00809?tab=repositories">
-                    <img className="col-sm-2" src="../src/assets/images/github icon.png" alt="github icon"/>
+                        <img style={styles.imgSize} src="../src/assets/images/github icon.png" alt="github icon"/>
                     </a>
-                </li>
-                <li style={styles.linkStyle} className="list-group-item col-4">
+                </div>
+                <div style={styles.boxSize} className="col-4">
                     <a target="_blank" href="https://www.linkedin.com/in/luis-david-carbajal-655080233">
-                    <img className="col-sm-2" src="../src/assets/images/linked in icon black.png" alt="LinkedIn icon"/>
+                        <img style={styles.imgSize} src="../src/assets/images/linked in icon black.png" alt="LinkedIn icon"/>
                     </a>
-                </li>
-                <li style={styles.linkStyle} className="list-group-item col-4">
-                    <a target="_blank" href="https://github.com/Luis00809?tab=repositories">
-                    <img className="col-sm-2" src="../src/assets/images/mail icon.png" alt="mail icon"/>
-                    </a>
-                </li>
-            </ul>
-        </div> */}
+                </div>
+                <div style={styles.boxSize} className="col-4">
+                    <a target="_blank" href="https://stackoverflow.com/users/22882754/david-carbajal">
+                        <img style={styles.imgSize} src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stack_Overflow_icon.svg/768px-Stack_Overflow_icon.svg.png" alt="stack overflow icon"/>
+                    </a> 
+                </div>
+            </div>
+            
+        </div>
+        
       </footer>  
         
     )    
