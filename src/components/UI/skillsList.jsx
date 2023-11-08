@@ -1,9 +1,12 @@
 function SkillsList(props) {
     return (
-        <div>
-            {props.skills.map(item => (
-            <li key={item.id}>{item.devSkill}</li>
-            ))}
+        <div className="text-center" >
+            <ul >
+                {props.skills.map(item => (
+                <li id="skillsList" key={item.id}>{item.devSkill}</li>
+                ))}
+            </ul>
+            
         </div>
     );
 };
