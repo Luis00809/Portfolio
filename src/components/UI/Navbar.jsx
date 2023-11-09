@@ -1,14 +1,20 @@
 import { Link, useLocation } from 'react-router-dom';
+import "../../styles/navbar.css";
 
 const styles = {
   nav: {
     height: '100px',
-    background: "black"
+    background: "black",
   },
   name: {
     color: "white"
+  },
+  border: {
+    border: "none"
   }
 }
+
+
 
  function Nav() {   
     const currentPage = useLocation().pathname;
@@ -18,12 +24,12 @@ const styles = {
         <div className='row'>
           <h1 style={styles.name}>Luis David Carbajal</h1>
         </div>
-        <div className='d-flex justify-content-end '>
-          <ul className="nav nav-tabs ">
+        <div  className='d-flex justify-content-end '>
+          <ul style={styles.border} className="nav nav-tabs ">
             <li className="nav-item">
               <Link
                 to="/"
-                className={currentPage === '/' ? 'nav-link active' : 'nav-link'}
+                className={currentPage === '/' ? 'nav-link active back' : 'nav-link'}
               >
                 About
               </Link>
@@ -31,7 +37,8 @@ const styles = {
             <li className="nav-item">
               <Link
                 to="/portfolio"
-                className={currentPage === '/portfolio' ? 'nav-link active' : 'nav-link'}
+                className={currentPage === '/portfolio' ? 'nav-link active back' : 'nav-link'}
+                
               >
                 Portfolio
               </Link>
