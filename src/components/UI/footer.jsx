@@ -2,20 +2,20 @@
  const styles = { 
     imgSize: {
         width: "40px",
-        height: "40px"
+        height: "40px",
     },
     boxSize:{
         display: "flex",
         justifyContent: "center",
-        width: "40px"
+        width: "40px",
+
     },
     parentBox: {
         width: "100%",
     },
     border: {
-        borderTop: "1px solid black",
-        marginTop: '20px',
-        paddingTop: "20px",
+        marginTop: '90px',
+        paddingTop: "10px",
     }
  }
  

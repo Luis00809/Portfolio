@@ -13,12 +13,15 @@ const styles = {
     },
     title: {
        position: 'relative',
-       bottom: "10px"
+       bottom: "10px",
+       color: "rgb(0, 119, 182)",
+       fontSize: "20px"
     },
     backColor: {
-        background: "rgb(173, 232, 244)",
+        background: "rgb(202, 240, 248)",
         border: 'none'
-    }
+    },
+
     
 }
 
