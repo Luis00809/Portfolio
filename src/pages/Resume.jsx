@@ -1,5 +1,5 @@
 import SkillsList from "../components/UI/skillsList";
-import "../styles/resume.CSS";
+import "../styles/resume.css";
 
 const skills = [
     {
