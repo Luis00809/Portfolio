@@ -4,14 +4,15 @@ import "../../styles/navbar.css";
 const styles = {
   nav: {
     height: '100px',
-    background: "black",
+    background: "rgb(3, 4, 94)",
   },
   name: {
-    color: "white"
+    color: "rgb(173, 232, 244)"
   },
   border: {
     border: "none"
-  }
+  },
+  
 }
 
 
@@ -26,9 +27,10 @@ const styles = {
         </div>
         <div  className='d-flex justify-content-end '>
           <ul style={styles.border} className="nav nav-tabs ">
-            <li className="nav-item">
+            <li className="nav-item ">
               <Link
                 to="/"
+                style={styles.textColor}
                 className={currentPage === '/' ? 'nav-link active back' : 'nav-link'}
               >
                 About
@@ -37,6 +39,7 @@ const styles = {
             <li className="nav-item">
               <Link
                 to="/portfolio"
+                style={styles.textColor}
                 className={currentPage === '/portfolio' ? 'nav-link active back' : 'nav-link'}
                 
               >
@@ -46,6 +49,7 @@ const styles = {
             <li className="nav-item">
               <Link
                 to="/contact"
+                style={styles.textColor}
                 className={currentPage === '/contact' ? 'nav-link active' : 'nav-link'}
               >
                 Contact
@@ -54,6 +58,7 @@ const styles = {
             <li className="nav-item">
               <Link
                 to="/resume"
+                style={styles.textColor}
                 className={currentPage === '/resume' ? 'nav-link active' : 'nav-link'}
               >
                 Resume

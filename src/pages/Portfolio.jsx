@@ -50,7 +50,8 @@ const project = [
 
 const styles = {
     margin: {
-        margin: '3rem'
+        margin: '3rem',
+        color: "rgb(3, 4, 94)"
     }
 }
 

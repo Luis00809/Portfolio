@@ -12,6 +12,16 @@ const styles = {
        flexDirection: 'column',
        width: "100%",
        height: "610px"
+    },
+    header: {
+        color: "rgb(3, 4, 94)"
+    },
+    pColor: {
+        color: "rgb(12, 24, 33)"
+    },
+    errorText: {
+        color: "red",
+        fontSize: "20px"
     }
 }
 
@@ -66,13 +76,14 @@ export default function Contact() {
     return (
         <div style={styles.parentBox}>
             <div style={styles.box} className='container'>
-                <h1 className='text-center mb-5 mt-5'>Contact Me</h1>
+                <h1 style={styles.header} className='text-center mb-5 mt-5'>Contact Me</h1>
                 <form onSubmit={handleSubmit}>
                         <div className="mb-3 text-center">
-                            <label htmlFor="exampleInputEmail1" className="  form-label">Name:</label>
+                            <label style={styles.pColor} htmlFor="exampleInputEmail1" className="  form-label">Name:</label>
                             <input 
                                 value={name}
                                 name='name'
+                                style={styles.pColor}
                                 onChange={handleInputChange}
                                 type='text'
                                 placeholder='name'
@@ -81,9 +92,10 @@ export default function Contact() {
                         </div>
 
                     <div className="mb-3 text-center">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Email:</label>
+                        <label style={styles.pColor} htmlFor="exampleInputEmail1" className="form-label">Email:</label>
                         <input 
                                 value={email}
+                                style={styles.pColor}
                                 name='email'
                                 onChange={handleInputChange}
                                 type='email'
@@ -93,9 +105,10 @@ export default function Contact() {
                     </div>
                     
                     <div className="input-group">
-                        <span className="input-group-text">Message:</span>
+                        <span style={styles.pColor} className="input-group-text">Message:</span>
                         <textarea 
-                                className="form-control" 
+                                className="form-control"
+                                style={styles.pColor} 
                                 value={message}
                                 name='message'
                                 onChange={handleInputChange}
@@ -110,7 +123,7 @@ export default function Contact() {
                 </form>
                 {errorMessage && (
                     <div>
-                        <p className='text-center m-2'>*{errorMessage}*</p>
+                        <p style={styles.errorText} className='text-center m-2'>*{errorMessage}*</p>
                     </div>
                 )}
             </div>
