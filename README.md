@@ -21,6 +21,8 @@
    
    ## Usage
    
+  The deployed app can be found here: https://glittering-lily-00244d.netlify.app/
+
   This application is meant to gain understanding of who I am via my about section. An employer can see the previous projects I have done and click on them to access those apps. If an employer wants to contact me then they can fillout the contact me form.
    
   
