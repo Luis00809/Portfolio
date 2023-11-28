@@ -42,7 +42,7 @@ const project = [
         id: 6,
         name: "Password Generator",
         description: "Create a random password",
-        src: '../public/PasswordGenerator.png',
+        src: '../public/assets/PasswordGenerator.png',
         link: "https://luis00809.github.io/password-generator/"
 
     }
