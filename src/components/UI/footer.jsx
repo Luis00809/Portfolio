@@ -26,12 +26,12 @@
             <div style={styles.parentBox} className="row d-flex justify-content-evenly ">
                 <div style={styles.boxSize} className=" col-4 ">
                     <a target="_blank" href="https://github.com/Luis00809?tab=repositories">
-                        <img style={styles.imgSize} src="../public/assets/images/github icon.png" alt="github icon"/>
+                        <img style={styles.imgSize} src="../assets/images/github icon.png" alt="github icon"/>
                     </a>
                 </div>
                 <div style={styles.boxSize} className="col-4">
                     <a target="_blank" href="https://www.linkedin.com/in/luis-david-carbajal-655080233">
-                        <img style={styles.imgSize} src="../public/assets/images/linked in icon black.png" alt="LinkedIn icon"/>
+                        <img style={styles.imgSize} src="../assets/images/linked in icon black.png" alt="LinkedIn icon"/>
                     </a>
                 </div>
                 <div style={styles.boxSize} className="col-4">

@@ -32,7 +32,7 @@ export default function About() {
         <div className="container d-flex">
             <div className="row">
                 <div>
-                    <img style={styles.image} src="../public/assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
+                    <img style={styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
                 </div>
                 <div className=" col-sm-12">
                     <p className="fs-5"> Hello! My name is </p>
