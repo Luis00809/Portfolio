@@ -1,7 +1,7 @@
 
 const styles = {
     size: {
-        width: '360px',
+        width: '335px',
         height: '300px',
         border: "2px solid rgb(2, 62, 138)",
         borderRadius: "35px",
