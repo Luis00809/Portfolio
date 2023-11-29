@@ -79,7 +79,7 @@ const styles = {
 export default function Resume() {
     return (
         <div className="container">
-            <h2 className="text-center">Download my Resume</h2>
+            <h2 className="text-center">Download my <a href="../assets/resume/DAVID_CARBAJAL_RESUME.pdf" download>Resume</a></h2>
             <div className="row">
                 <div style={styles.box} >
                     <div style={styles.innerBox}>

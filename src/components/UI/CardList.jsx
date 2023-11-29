@@ -1,10 +1,10 @@
 
 const styles = {
     size: {
-        width: '300px',
+        width: '310px',
         height: '300px',
         border: "2px solid rgb(2, 62, 138)",
-        borderRadius: "35px"
+        borderRadius: "35px",
     
     },
     bottomSpacer: {
@@ -12,15 +12,13 @@ const styles = {
 
     },
     title: {
-       position: 'relative',
-       bottom: "10px",
        color: "rgb(0, 119, 182)",
        fontSize: "20px"
     },
     backColor: {
         background: "rgb(202, 240, 248)",
-        border: 'none'
-    },
+        border: 'none',
+    }
 
     
 }
