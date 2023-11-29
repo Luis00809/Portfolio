@@ -4,11 +4,12 @@ const styles = {
         border: "4px solid rgb(2, 62, 138)",
         marginBottom: '10px',
         marginTop: '25px',
-        width: "110px"
+        width: "150px"
     },
     nameP: {
         fontSize: '70px',
         color: "rgb(3, 4, 94)",
+       
     },
     pHeight: {
         height: '12px'
@@ -20,10 +21,10 @@ const styles = {
     subHead:{
         color: 'rgb(0, 119, 182)',
     },
-    
-    
-    
-    
+    greet: {
+        position: 'relative',
+        top: '20px'
+    }
 }
 
 export default function About() {
@@ -35,7 +36,7 @@ export default function About() {
                     <img style={styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
                 </div>
                 <div className=" col-sm-12">
-                    <p className="fs-5"> Hello! My name is </p>
+                    <p style={styles.greet} className="fs-5 "> Hello! My name is </p>
                     <p style={styles.nameP} >Luis David Carbajal</p>
                     <p style={styles.subHead} className="fs-2">Web-developer</p>
                     <p style={styles.pColor} className="fs-5">
