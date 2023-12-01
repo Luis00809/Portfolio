@@ -1,5 +1,6 @@
 import validateEmail from '../utils/helpers';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
 
 const styles = {
     box: {
@@ -32,6 +33,12 @@ export default function Contact() {
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
+    const USER_ID = import.meta.env.VITE_REACT_APP_USER_ID
+    const SERVICE_ID = import.meta.env.VITE_REACT_APP_SERVICE_ID
+    const TEMPLATE_ID = import.meta.env.VITE_REACT_APP_TEMPLATE_ID
+    
+
+
     const handleInputChange = (e) => {
         const { target } = e;
         const inputType = target.name;
@@ -45,6 +52,8 @@ export default function Contact() {
             setMessage(inputValue);
         }
     };
+
+    const form = useRef();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,6 +73,7 @@ export default function Contact() {
             return;
         };
 
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, USER_ID)
         
 
         alert(`Thank you for reaching out ${name}!`)
@@ -77,7 +87,7 @@ export default function Contact() {
         <div style={styles.parentBox}>
             <div style={styles.box} className='container'>
                 <h1 style={styles.header} className='text-center mb-5 mt-5'>Contact Me</h1>
-                <form onSubmit={handleSubmit}>
+                <form ref={form} onSubmit={handleSubmit}>
                         <div className="mb-3 text-center">
                             <label style={styles.pColor} htmlFor="exampleInputEmail1" className="  form-label">Name:</label>
                             <input 

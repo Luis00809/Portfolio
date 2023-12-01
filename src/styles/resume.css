@@ -45,3 +45,15 @@ h5 {
 #proSummary {
     line-height: 2rem;
 }
+.innerBox {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+   }
+   
+@media (max-width: 768px) {
+    .innerBox {
+      width: 100%;
+    }
+   }
+   
