@@ -66,6 +66,7 @@ const styles = {
         width: "50%",
         display: "flex",
         justifyContent: "center",
+        
     },
     skillsBox: {
         width: "100%",
@@ -78,10 +79,10 @@ const styles = {
 
 export default function Resume() {
     return (
-        <div className="container">
+        <div className="container ">
             <h2 className="text-center">Download my <a href="../assets/resume/DAVID_CARBAJAL_RESUME.pdf" download>Resume</a></h2>
             <div className="row">
-                <div style={styles.box} >
+                <div style={styles.box} className=" ">
                     <div style={styles.innerBox}>
                         <div style={styles.skillsBox} className="d-flex flex-column">                    
                             <div>
@@ -93,7 +94,7 @@ export default function Resume() {
                         </div>
                     </div>
 
-                    <div style={styles.innerBox}>
+                    <div style={styles.innerBox} >
                         
                         <ul id="contactInfo">
                             <li>Fresno, CA 93727</li>
