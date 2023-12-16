@@ -16,8 +16,13 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^10.16.16",
+    "popmotion": "^11.0.5",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-responsive": "^9.0.2",
     "react-router-dom": "^6.10.0"
   },
   "devDependencies": {

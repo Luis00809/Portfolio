@@ -4,7 +4,7 @@ import "../../styles/navbar.css";
 const styles = {
   nav: {
     height: '100px',
-    background: "rgb(3, 4, 94)",
+    // background: "rgb(3, 4, 94)",
   },
   name: {
     color: "rgb(173, 232, 244)"

@@ -1,8 +1,18 @@
 import Cardlist from '../components/UI/CardList';
 import SkillsList from "../components/UI/skillsList";
+import { motion } from 'framer-motion';
+import HeadingAnimation from '../components/UI/Heading'
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { useMediaQuery } from 'react-responsive';
+
+
 
 import { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
+
 
 import "../styles/resume.css";
 
@@ -59,36 +69,39 @@ const styles = {
     image: {
         borderRadius: "50%",
         border: "4px solid rgb(2, 62, 138)",
-        marginBottom: '10px',
-        marginTop: '25px',
-        width: "150px"
+        width: "250px",
+        height: '30%'
     },
     nameP: {
         fontSize: '70px',
-        color: "rgb(3, 4, 94)",
+        color: "rgb(255, 255, 255)",
+        fontFamily: 'open sans',
+
        
     },
     pHeight: {
         height: '12px'
     },
     pColor: {
-        color: "rgb(12, 24, 33)",
-        
+        color: "rgb(245, 245, 245)",
+        fontFamily: 'open sans',
     },
-    subHead:{
-        color: 'rgb(0, 119, 182)',
+    messageValues: {
+        color: "rgb(4, 15, 15)",
+        fontFamily: 'open sans',
+    },
+    inputColor: {
+        fontFamily: 'open sans',
+        color: 'rgb(4, 15, 15)'
     },
     greet: {
         position: 'relative',
-        top: '20px'
-    },
-    margin: {
-        margin: '2rem',
-        color: "rgb(3, 4, 94)"
+        top: '20px',
+        color: 'rgb(72, 202, 228)',
+        fontFamily: 'open sans',
+
     },
     box: {
-        // border: "2px solid black",
-        // marginTop: "8rem",
         flexGrow: 1
     },
     parentBox: {
@@ -96,9 +109,6 @@ const styles = {
        flexDirection: 'column',
        width: "100%",
        height: "610px"
-    },
-    header: {
-        color: "rgb(3, 4, 94)"
     },
     errorText: {
         color: "red",
@@ -108,6 +118,27 @@ const styles = {
         width: "100px",
         height: "100px",
     },
+    containerEl: {
+        height: '100vh',
+        width: '100%'
+    },
+    inBetweenSizes: {
+        height: '140vh',
+        width: '100%'
+    },
+    smallScreen: {
+        height: '260vh',
+        width: '100%'
+    },
+    contactS: {
+        height: '40vh',
+        width: '100%'
+    },
+    resume: {
+        color: 'rgb(72, 202, 228)',
+        fontFamily: 'open sans',
+    },
+    
 }
 
 export default function About() {
@@ -119,7 +150,11 @@ export default function About() {
     const USER_ID = import.meta.env.VITE_REACT_APP_USER_ID
     const SERVICE_ID = import.meta.env.VITE_REACT_APP_SERVICE_ID
     const TEMPLATE_ID = import.meta.env.VITE_REACT_APP_TEMPLATE_ID
-    
+
+    const isMediumScreen = useMediaQuery({query: '(max-width: 991px)' });
+
+    const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' });
+    const isInBetweenSizes = useMediaQuery({ query: '(min-width: 768px) and (max-width: 991px)' });
 
 
     const handleInputChange = (e) => {
@@ -169,106 +204,143 @@ export default function About() {
 
     return (
     <div>
-        <div className="container d-flex">
-            <div className="row">
-                <div>
-                    <img style={styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
-                </div>
-                <div className=" col-sm-12">
-                    <p style={styles.greet} className="fs-5 "> Hello! My name is </p>
-                    <p style={styles.nameP} >Luis David Carbajal</p>
-                    <p style={styles.subHead} className="fs-2">Web-developer</p>
-                    <p style={styles.pColor} className="fs-5">
-                        I am currently in a coding bootcamp where I am learning how to create a full-stack application.
-                        I came into this bootcamp without any prior knowledge in programming and yet it has been a fun experience.
-                        Before joining this bootcamp I received my bachelor's degree in Psychology but have decided to change my career path one year out of undergrad.
-                        I have always wanted to give coding a chance and thought now would be the best time to do so before I advanced in my psych career. Aside 
-                        from all of the technologies I have learned in this program, I learned what it means to be a problem solver and that is what coding is all about.
-                        I came in with a mindset that everthing is solvable and that really pushed me forward, especially when decoding a bug in my code.
-                        When I take a break from my computer I like to wind down and watch tv, exercise, and expand my knowledge in the world of real estate.
-                        Real estate is another journey that I started recently but it had a snowball effect in helping me switch my career path. 
-                        Once I acquired my first rental property, it gave me confidence in my abilities to pursue what I actually wanted to do in life rather than being hesitant to start.
-                        I know there's going to be frustrating nights ahead, but I am excited for the journey.
-                    </p>
-                </div>
-                
-            </div>
-        </div>
-
-        <div>
-            <h1 style={styles.margin} className='text-center'>Portfolio</h1>
-            <Cardlist project={project} />
-        </div>
-
-        <div className='bg-danger'>
-            <img style={styles.imgSize}  src="https://static.vecteezy.com/system/resources/previews/027/127/463/original/javascript-logo-javascript-icon-transparent-free-png.png"/>
-            <img style={styles.imgSize} src='https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png' />
-            <img style={styles.imgSize} src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png' />
-            <img style={styles.imgSize} src='https://cdn-icons-png.flaticon.com/512/4299/4299956.png' />
-            <img style={styles.imgSize} src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' />
-            <img style={styles.imgSize} src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Font_Awesome_5_brands_node-js.svg/1200px-Font_Awesome_5_brands_node-js.svg.png' />
-
-        </div>
-
-        <div style={styles.parentBox}>
-            <div style={styles.box} className='container'>
-                <h1 style={styles.header} className='text-center mb-5 mt-5'>Contact Me</h1>
-                <form ref={form} onSubmit={handleSubmit}>
-                        <div className="mb-3 text-center">
-                            <label style={styles.pColor} htmlFor="exampleInputEmail1" className="  form-label">Name:</label>
-                            <input 
-                                value={name}
-                                name='name'
-                                style={styles.pColor}
-                                onChange={handleInputChange}
-                                type='text'
-                                placeholder='name'
-                                className='ms-3'
-                            />
+        <Container  >
+            <div style={styles.containerEl}>
+                <Row className=' h-100 d-flex align-items-center'>
+                    <Col m={12} lg={4}   > 
+                        <div className=' d-flex justify-content-center '>
+                            <img style={styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
                         </div>
-
-                    <div className="mb-3 text-center">
-                        <label style={styles.pColor} htmlFor="exampleInputEmail1" className="form-label">Email:</label>
-                        <input 
-                                value={email}
-                                style={styles.pColor}
-                                name='email'
-                                onChange={handleInputChange}
-                                type='email'
-                                placeholder='@email.com'
-                                className='ms-3'
-                            />
-                    </div>
-                    
-                    <div className="input-group">
-                        <span style={styles.pColor} className="input-group-text">Message:</span>
-                        <textarea 
-                                className="form-control"
-                                style={styles.pColor} 
-                                value={message}
-                                name='message'
-                                onChange={handleInputChange}
-                                type='text'
-                                placeholder='Leave a message'>
-
-                        </textarea>
-                    </div>
-                    <div className='d-flex justify-content-center '>
-                        <button type="submit" className="btn btn-primary mt-3">Submit</button>
-                    </div>
-                </form>
-                {errorMessage && (
-                    <div>
-                        <p style={styles.errorText} className='text-center m-2'>*{errorMessage}*</p>
-                    </div>
-                )}
+                    </Col>
+                    <Col>
+                        <div>
+                            {/* <p style={styles.greet} className="fs-5 "> Hello! My name is </p>
+                            <p style={styles.nameP} >Luis David Carbajal</p> */}
+                            <HeadingAnimation classH={isMediumScreen? 'mb-3 text-center' : 'mb-3'} label={'Web Developer'} />
+                            <p style={styles.pColor} className="fs-5">
+                                I am a full-stack developer who specializes in backend procedures, such as handeling api routes and managing databases.
+                                I started my programming journey via a bootcamp where I learned the fundamentals of web development.              
+                            </p>
+                            <p style={styles.pColor} className="fs-5">
+                                Aside from all of the technologies I have learned from the bootcamp, I learned that coding is all about being a problem solver.
+                                I came in with a mindset that everything is solvable and that really pushed me forward.
+                            </p> 
+                            <p style={styles.pColor} className="fs-5">
+                                When I'm not coding away, I like to play video games, exercise, and expand my knowledge in the world of real estate.
+                            </p>
+                        </div>
+                    </Col>
+                </Row>
             </div>
-        </div>
-        
-        <div>
-            <h2 className="text-center">Download my <a href="../assets/resume/DAVID_CARBAJAL_RESUME.pdf" download>Resume</a></h2>
-        </div>
-                    
+
+
+            {/* portfolio */}
+            <div style={isSmallScreen ? styles.smallScreen : isInBetweenSizes ? styles.inBetweenSizes : styles.containerEl}>
+                <Row >
+                    <Col>
+                        <HeadingAnimation classH={'text-center mb-3'} label={'Portfolio'} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Cardlist project={project} />
+                    </Col>
+                </Row>
+            </div>
+            {/* portfolio */}
+
+
+            {/* skills */}
+            <div style={styles.containerEl} className=' d-flex flex-column justify-content-center'>
+                <Row>
+                    <Col>
+                        <div >
+                            <HeadingAnimation classH={'mb-3 text-center'} label={'Skills'} />
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <div className='skills-container'>
+                            <SkillsList />
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            {/* skills */}
+            
+
+            {/* contact form */}
+            <div style={styles.contactS}>
+                <Row>
+                    <Col>
+                        <div style={styles.parentBox}>
+                            <div style={styles.box} className='container'>
+                            <HeadingAnimation classH={'mb-3 text-center'} label={'Contact Me'} />
+                                <form ref={form} onSubmit={handleSubmit}>
+                                        <div className="mb-3 text-center">
+                                            <label style={styles.pColor} htmlFor="exampleInputEmail1" className="  form-label">Name:</label>
+                                            <input 
+                                                value={name}
+                                                name='name'
+                                                style={styles.inputColor}
+                                                onChange={handleInputChange}
+                                                type='text'
+                                                placeholder='name'
+                                                className='ms-3'
+                                            />
+                                        </div>
+
+                                    <div className="mb-3 text-center">
+                                        <label style={styles.pColor} htmlFor="exampleInputEmail1" className="form-label">Email:</label>
+                                        <input 
+                                                value={email}
+                                                style={styles.inputColor}
+                                                name='email'
+                                                onChange={handleInputChange}
+                                                type='email'
+                                                placeholder='@email.com'
+                                                className='ms-3'
+                                            />
+                                    </div>
+                                    
+                                    <div className="input-group">
+                                        <span style={styles.messageValues} className="input-group-text">Message:</span>
+                                        <textarea 
+                                                className="form-control"
+                                                style={styles.inputColor} 
+                                                value={message}
+                                                name='message'
+                                                onChange={handleInputChange}
+                                                type='text'
+                                                placeholder='Leave a message'>
+
+                                        </textarea>
+                                    </div>
+                                    <div className='d-flex justify-content-center test '>
+                                        <button type="submit" className="btn btn-primary mt-3">Submit</button>
+                                    </div>
+                                </form>
+                                {errorMessage && (
+                                    <div>
+                                        <p style={styles.errorText} className='text-center m-2'>*{errorMessage}*</p>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </Col>
+                    <Col xs={12}>
+                        <div>
+                            <h2 style={styles.pColor} className="text-center">Download my <span style={styles.resume}><a href="../assets/resume/DAVID_CARBAJAL_RESUME.pdf" download>Resume</a></span></h2>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+            {/* contact form */}
+
+            {/* resume */}
+            
+        </Container>
     </div>      
     )
 }
