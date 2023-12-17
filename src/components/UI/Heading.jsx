@@ -17,7 +17,7 @@ const HeadingAnimation = ({ label, classH }) => {
 
     const variants = {
         hidden: { opacity: 0, },
-        show: { opacity: 1,  transition: { duration: 3 }
+        show: { opacity: 1,  transition: { duration: 2 }
     },
     };
 

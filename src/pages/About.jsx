@@ -120,7 +120,8 @@ const styles = {
     },
     containerEl: {
         height: '100vh',
-        width: '100%'
+        width: '100%',
+        background: 'rgb(4, 15, 15)'
     },
     inBetweenSizes: {
         height: '140vh',
@@ -217,17 +218,20 @@ export default function About() {
                             {/* <p style={styles.greet} className="fs-5 "> Hello! My name is </p>
                             <p style={styles.nameP} >Luis David Carbajal</p> */}
                             <HeadingAnimation classH={isMediumScreen? 'mb-3 text-center' : 'mb-3'} label={'Web Developer'} />
-                            <p style={styles.pColor} className="fs-5">
-                                I am a full-stack developer who specializes in backend procedures, such as handeling api routes and managing databases.
-                                I started my programming journey via a bootcamp where I learned the fundamentals of web development.              
-                            </p>
-                            <p style={styles.pColor} className="fs-5">
-                                Aside from all of the technologies I have learned from the bootcamp, I learned that coding is all about being a problem solver.
-                                I came in with a mindset that everything is solvable and that really pushed me forward.
-                            </p> 
-                            <p style={styles.pColor} className="fs-5">
-                                When I'm not coding away, I like to play video games, exercise, and expand my knowledge in the world of real estate.
-                            </p>
+                            {/* fs-5 text-center */}
+                            <div className='slideLeft'>
+                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center " : "fs-5 "}>
+                                    I am a full-stack developer who specializes in backend procedures, such as handeling api routes and managing databases.
+                                    I started my programming journey via a bootcamp where I learned the fundamentals of web development.              
+                                </p>
+                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center" : "fs-5 "}>
+                                    Aside from all of the technologies I have learned from the bootcamp, I learned that coding is all about being a problem solver.
+                                    I came in with a mindset that everything is solvable and that really pushed me forward.
+                                </p> 
+                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center " : "fs-5 "}>
+                                    When I'm not coding away, I like to play video games, exercise, and expand my knowledge in the world of real estate.
+                                </p>
+                            </div>
                         </div>
                     </Col>
                 </Row>

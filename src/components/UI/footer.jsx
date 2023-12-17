@@ -1,8 +1,8 @@
  
  const styles = { 
     imgSize: {
-        width: "40px",
-        height: "40px",
+        width: "50px",
+        height: "50px",
     },
     boxSize:{
         display: "flex",
@@ -31,7 +31,7 @@
                 </div>
                 <div style={styles.boxSize} className="col-4">
                     <a target="_blank" href="https://www.linkedin.com/in/luis-david-carbajal-655080233">
-                        <img style={styles.imgSize} src="../assets/images/linked in icon black.png" alt="LinkedIn icon"/>
+                        <img style={styles.imgSize} src="https://pngimg.com/d/linkedIn_PNG8.png"/>
                     </a>
                 </div>
                 <div style={styles.boxSize} className="col-4">

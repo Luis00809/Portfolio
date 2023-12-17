@@ -2,6 +2,8 @@ import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
+import { useMediaQuery } from 'react-responsive';
+
 
 const skillsImages = [
     
@@ -11,7 +13,7 @@ const skillsImages = [
     },
     {
         id: 3,
-        src: "https://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png"
+        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/800px-HTML5_Badge.svg.png"
     },
     {
         id: 4,
@@ -19,7 +21,7 @@ const skillsImages = [
     },
     {
         id: 5,
-        src: "https://cdn-icons-png.flaticon.com/512/4299/4299956.png"
+        src: "https://cdn-icons-png.flaticon.com/512/4248/4248416.png"
     },
     {
         id: 6,
@@ -27,8 +29,12 @@ const skillsImages = [
     },
     {
         id: 7,
-        src: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Font_Awesome_5_brands_node-js.svg/1200px-Font_Awesome_5_brands_node-js.svg.png"
+        src: "https://static-00.iconduck.com/assets.00/node-js-icon-227x256-913nazt0.png"
     },
+    {
+      id: 8,
+      src: "https://www.pngall.com/wp-content/uploads/13/Mongodb-PNG-Pic.png"
+    }
     
 ]
 
@@ -37,8 +43,14 @@ const style = {
     width: "300px",
     height: "300px",
   },
+  imgOnSmall: {
+    width: "100px",
+    height: "100px",
+  }
   
 }
+
+
 const variants = {
   enter: (direction) => {
     return {
@@ -74,13 +86,17 @@ export const SkillsList = () => {
     setPage([page + newDirection, newDirection]);
   };
 
+  const isSmall = useMediaQuery({ query: '(max-width: 750px)' });
+
+
   return (
+
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
           src={skillsImages[imageIndex].src}
-          style={style.skillImg}
+          style={isSmall? style.imgOnSmall : style.skillImg}
           custom={direction}
           variants={variants}
           initial="enter"
