@@ -6,6 +6,8 @@ import HeadingAnimation from '../components/UI/Heading'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
 import { useMediaQuery } from 'react-responsive';
 
 
@@ -70,14 +72,41 @@ const styles = {
         borderRadius: "50%",
         border: "4px solid rgb(2, 62, 138)",
         width: "250px",
-        height: '30%'
+        height: '30%',
     },
-    nameP: {
-        fontSize: '70px',
+    imageSmall: {
+        borderRadius: "50%",
+        border: "4px solid rgb(2, 62, 138)",
+        width: "250px",
+        height: '30%',
+        marginTop: '40px'
+    },
+    btn: {
+        width: "105px",
+        height: "35px",
+        background: 'rgb(0, 150, 199)',
+        border: 'none',
+        borderRadius: "10px"
+    },
+
+    greet: {
         color: "rgb(255, 255, 255)",
         fontFamily: 'open sans',
-
-       
+        fontSize: "55px"
+      },
+    nameP: {
+        fontSize: '70px',
+        color: 'rgb(72, 202, 228)',
+        fontFamily: 'open sans',
+        position: 'relative',
+        top: '160px' 
+    },
+    bigScreenNameP: {
+        fontSize: '70px',
+        color: 'rgb(72, 202, 228)',
+        fontFamily: 'open sans',
+        position: 'relative',
+        top: '60px' 
     },
     pHeight: {
         height: '12px'
@@ -93,13 +122,6 @@ const styles = {
     inputColor: {
         fontFamily: 'open sans',
         color: 'rgb(4, 15, 15)'
-    },
-    greet: {
-        position: 'relative',
-        top: '20px',
-        color: 'rgb(72, 202, 228)',
-        fontFamily: 'open sans',
-
     },
     box: {
         flexGrow: 1
@@ -119,7 +141,7 @@ const styles = {
         height: "100px",
     },
     containerEl: {
-        height: '100vh',
+        height: '115vh',
         width: '100%',
         background: 'rgb(4, 15, 15)'
     },
@@ -206,12 +228,32 @@ export default function About() {
     return (
     <div>
         <Container  >
-            <div style={styles.containerEl}>
-                <Row className=' h-100 d-flex align-items-center'>
-                    <Col m={12} lg={4}   > 
-                        <div className=' d-flex justify-content-center '>
-                            <img style={styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
-                        </div>
+            <div id='about' style={styles.containerEl}>
+                <Row className=' h-100 d-flex '>
+                    <Col sm={12} className='text-center '>
+                        <h1 style={isMediumScreen? styles.bigScreenNameP : styles.nameP}><span style={styles.greet}>Hi, I'm</span> David Carbajal</h1>
+                    </Col>
+                    <Col m={12} lg={5} >
+                        <Row>
+                            <Col xs={12}>
+                                <div className=' d-flex justify-content-center mb-5 '>
+                                    <img style={isSmallScreen? styles.imageSmall : styles.image} src="../assets/images/Photo for badge .png" alt="Picture of Luis David Carbajal"/>
+                                </div>
+                            </Col>
+                        </Row>
+                        <Row className='mb-4'>
+                            <Col xs={6}  className='d-flex justify-content-center'>
+                                <div>
+                                    <Button style={{...styles.btn, marginLeft: '70px'}} variant="primary">Contact</Button>{' '}
+                                </div>
+                            </Col>
+                            <Col className='d-flex justify-content-center'>
+                                <a href="../assets/resume/DAVID_CARBAJAL_RESUME (1).pdf" download>
+                                    <Button style={{...styles.btn, marginRight: '70px'}} variant="primary">Resume</Button>{' '}
+                                </a>
+                            </Col>
+                        </Row>
+                        
                     </Col>
                     <Col>
                         <div>
@@ -239,7 +281,7 @@ export default function About() {
 
 
             {/* portfolio */}
-            <div style={isSmallScreen ? styles.smallScreen : isInBetweenSizes ? styles.inBetweenSizes : styles.containerEl}>
+            <div id='portfolio' style={isSmallScreen ? styles.smallScreen : isInBetweenSizes ? styles.inBetweenSizes : styles.containerEl}>
                 <Row >
                     <Col>
                         <HeadingAnimation classH={'text-center mb-3'} label={'Portfolio'} />
@@ -255,7 +297,7 @@ export default function About() {
 
 
             {/* skills */}
-            <div style={styles.containerEl} className=' d-flex flex-column justify-content-center'>
+            <div id='skills' style={styles.containerEl} className=' d-flex flex-column justify-content-center'>
                 <Row>
                     <Col>
                         <div >
@@ -275,7 +317,7 @@ export default function About() {
             
 
             {/* contact form */}
-            <div style={styles.contactS}>
+            <div id='contact' style={styles.contactS}>
                 <Row>
                     <Col>
                         <div style={styles.parentBox}>
@@ -333,17 +375,10 @@ export default function About() {
                             </div>
                         </div>
                     </Col>
-                    <Col xs={12}>
-                        <div>
-                            <h2 style={styles.pColor} className="text-center">Download my <span style={styles.resume}><a href="../assets/resume/DAVID_CARBAJAL_RESUME.pdf" download>Resume</a></span></h2>
-                        </div>
-                    </Col>
+
                 </Row>
             </div>
             {/* contact form */}
-
-            {/* resume */}
-            
         </Container>
     </div>      
     )

@@ -1,3 +1,14 @@
+/* navbar */
+
+.navI {
+    color: rgb(202, 240, 248);
+}
+.navI:hover {
+    color: rgb(255, 211, 116);
+    transition-duration: 0.5s;
+}
+
+/* end navbar */
 
 @keyframes slideR {
     from {

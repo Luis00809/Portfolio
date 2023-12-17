@@ -1,75 +1,47 @@
-import { Link, useLocation } from 'react-router-dom';
-import "../../styles/navbar.css";
+import Nav from 'react-bootstrap/Nav';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import "../../styles/resume.css"
+
 
 const styles = {
-  nav: {
-    height: '100px',
-    // background: "rgb(3, 4, 94)",
+  containerStyle: {
+    height: "30px",
+    position: "fixed",
+    zIndex: "1"
   },
-  name: {
-    color: "rgb(173, 232, 244)"
-  },
-  border: {
-    border: "none"
-  },
-  
+  navs: {
+    fontFamily: 'open sans',
+    fontSize: '20px'
+  }
 }
 
-
-
- function Nav() {   
-    const currentPage = useLocation().pathname;
-
+ function NavSection() {   
     return (
-      <div style={styles.nav} className='container-fluid d-flex justify-content-between align-items-end '>
-        <div className='row'>
-          <h1 style={styles.name}>Luis David Carbajal</h1>
-        </div>
-        <div  className='d-flex justify-content-end '>
-          <ul style={styles.border} className="nav nav-tabs ">
-            <li className="nav-item ">
-              <Link
-                to="/"
-                style={styles.textColor}
-                className={currentPage === '/' ? 'nav-link active back' : 'nav-link'}
-              >
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/portfolio"
-                style={styles.textColor}
-                className={currentPage === '/portfolio' ? 'nav-link active back' : 'nav-link'}
-                
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/contact"
-                style={styles.textColor}
-                className={currentPage === '/contact' ? 'nav-link active' : 'nav-link'}
-              >
-                Contact
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/resume"
-                style={styles.textColor}
-                className={currentPage === '/resume' ? 'nav-link active' : 'nav-link'}
-              >
-                Resume
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <Container style={styles.containerStyle} fluid >
+        <Row>
+          <Col>
+                <Nav className="justify-content-end" activeKey="/home">
+                <Nav.Item >
+                  <Nav.Link className='navI' style={styles.navs}  href="#about">About</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className='navI' style={styles.navs} href="#portfolio" eventKey="link-1">Projects</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className='navI' style={styles.navs} href="#skills" eventKey="link-1">Skills</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link className='navI' style={styles.navs} href="#contact" eventKey="link-1">Contact</Nav.Link>
+                </Nav.Item>
+                </Nav>
+          </Col>
+        </Row>
+      </Container>
       
-        
     );
 }
 
-export default Nav;
+export default NavSection;
