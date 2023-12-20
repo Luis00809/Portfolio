@@ -1,3 +1,59 @@
+/* navbar */
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+ }
+.navI {
+    color: rgb(202, 240, 248);
+}
+.navI:hover {
+    color: rgb(255, 211, 116);
+    transition-duration: 0.5s;
+}
+
+/* end navbar */
+
+@keyframes slideR {
+    from {
+        transform: translateX(-300px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.animateTest {
+    animation: slideR 2s ease-in;
+}
+
+@keyframes slideL {
+    0% {
+        transform: translateX(300px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slideLeft p {
+    animation: slideL 1s ease-in forwards ;
+    opacity: 0;
+}
+
+.slideLeft p:nth-child(1){
+    animation-delay: 1s;
+}
+
+.slideLeft p:nth-child(2){
+    animation-delay: 2s;
+}
+.slideLeft p:nth-child(3){
+    animation-delay: 3s;
+}
+
+
 p {
     font-size: 10px;
 }
@@ -18,11 +74,19 @@ h5 {
     font-size: 13px;
 }
 
+.shortView {
+    margin-top: 800px;
+}
+
+.mediumView {
+    margin-top: 600px;
+}
+
 #skillsList {
     display: inline;
     font-size: 15px;
     padding: 10px;
-    width: 100%;
+    width: 50%;
 }
 
 #contactInfo li {
@@ -33,7 +97,7 @@ h5 {
 
 
 /* styling for experience && pro summary */
-#experienceSection {
+/* #experienceSection {
     height: 90%;
     width: 100%
 }
@@ -44,16 +108,132 @@ h5 {
 
 #proSummary {
     line-height: 2rem;
-}
+} */
 .innerBox {
     width: 50%;
     display: flex;
     justify-content: center;
    }
    
-@media (max-width: 768px) {
+
+.portCard {
+    width: 310px;
+    height: 300px;
+    /* border: 2px solid rgb(144, 224, 239); */
+    border-radius: 35px;
+
+}
+
+
+
+ .image-container {
+    position: relative;
+    display: inline-block;
+    
+ }
+ 
+ .image-container::after {
+    content: "";
+    background: rgba(23, 4, 94, 0.7); /* This is the color of the overlay */
+    border: 2px solid white;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    border-radius: 35px;
+
+  } 
+
+ .image-container:hover::after {
+    opacity: 1;
+    border-radius: 35px;
+    transform: translateY(-15px);
+    
+
+ } 
+ .image-container:hover .portCard {
+    transform: translateY(-15px);
+    border-color: red;
+ }
+
+ .imgDescription {
+    color: rgb(173, 232, 244);
+    font-weight: 900;
+    position: relative;
+    bottom: 150px;
+    height: 10px;
+    font-size: 20px;
+ }
+ 
+.test:hover {
+    transform: translateY(-5px);
+    transition-duration: 1s;
+
+}
+
+/* skills animations */
+.skills-container {
+    width: 50vw;
+    height: 40vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  .next,
+  .prev {
+    /* top: calc(50% - 20px); */
+    position: absolute;
+    background: white;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    z-index: 2;
+  }
+  
+  .next {
+    right: 2px;
+  }
+  
+  .prev {
+    left: 2px;
+    transform: scale(-1);
+  }
+  
+  
+  .refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(rgb(4, 15, 15), 1);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  /* skills animations */
+
+
+
+/* @media (max-width: 768px) {
     .innerBox {
       width: 100%;
     }
-   }
+   } */
    
