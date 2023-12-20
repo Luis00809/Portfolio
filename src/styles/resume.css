@@ -1,5 +1,7 @@
 /* navbar */
-
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+ }
 .navI {
     color: rgb(202, 240, 248);
 }
@@ -72,6 +74,14 @@ h5 {
     font-size: 13px;
 }
 
+.shortView {
+    margin-top: 800px;
+}
+
+.mediumView {
+    margin-top: 600px;
+}
+
 #skillsList {
     display: inline;
     font-size: 15px;
@@ -109,7 +119,7 @@ h5 {
 .portCard {
     width: 310px;
     height: 300px;
-    border: 2px solid rgb(2, 62, 138);
+    /* border: 2px solid rgb(144, 224, 239); */
     border-radius: 35px;
 
 }
@@ -124,14 +134,15 @@ h5 {
  
  .image-container::after {
     content: "";
-    background: rgba(250, 0, 0, 0.2); /* This is the color of the overlay */
+    background: rgba(23, 4, 94, 0.7); /* This is the color of the overlay */
+    border: 2px solid white;
     position: absolute; 
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.7s ease;
     border-radius: 35px;
 
   } 
@@ -140,16 +151,26 @@ h5 {
     opacity: 1;
     border-radius: 35px;
     transform: translateY(-15px);
+    
 
  } 
  .image-container:hover .portCard {
     transform: translateY(-15px);
     border-color: red;
  }
+
+ .imgDescription {
+    color: rgb(173, 232, 244);
+    font-weight: 900;
+    position: relative;
+    bottom: 150px;
+    height: 10px;
+    font-size: 20px;
+ }
  
 .test:hover {
-    transform: translateY(-10px);
-    transition-duration: 2s;
+    transform: translateY(-5px);
+    transition-duration: 1s;
 
 }
 
@@ -195,7 +216,7 @@ h5 {
   .refresh {
     padding: 10px;
     position: absolute;
-    background: rgba(rgb(4, 15, 15), 0.4);
+    background: rgba(rgb(4, 15, 15), 1);
     border-radius: 10px;
     width: 20px;
     height: 20px;

@@ -98,8 +98,9 @@ const styles = {
         fontSize: '70px',
         color: 'rgb(72, 202, 228)',
         fontFamily: 'open sans',
+        marginBottom: '200px',
         position: 'relative',
-        top: '160px' 
+        top: '130px' 
     },
     bigScreenNameP: {
         fontSize: '70px',
@@ -141,26 +142,34 @@ const styles = {
         height: "100px",
     },
     containerEl: {
-        height: '115vh',
+        height: '115dvh',
         width: '100%',
         background: 'rgb(4, 15, 15)'
     },
     inBetweenSizes: {
-        height: '140vh',
+        height: '140dvh',
         width: '100%'
     },
     smallScreen: {
-        height: '260vh',
-        width: '100%'
+        height: '335dvh',
+        width: '100%',
     },
     contactS: {
-        height: '40vh',
+        height: '40dvh',
         width: '100%'
     },
     resume: {
         color: 'rgb(72, 202, 228)',
         fontFamily: 'open sans',
     },
+    namePic: {
+        position: 'relative',
+        top: "100px"
+    },
+    undoNamePic: {
+        border: 'none'
+    }
+
     
 }
 
@@ -178,6 +187,9 @@ export default function About() {
 
     const isSmallScreen = useMediaQuery({ query: '(max-width: 767px)' });
     const isInBetweenSizes = useMediaQuery({ query: '(min-width: 768px) and (max-width: 991px)' });
+
+    const isShortHeight = useMediaQuery({ query: '(max-height: 900px)'})
+    const isMediumHeight = useMediaQuery({ query: '(min-height: 700px) and (max-height: 950)'})
 
 
     const handleInputChange = (e) => {
@@ -227,13 +239,15 @@ export default function About() {
 
     return (
     <div>
-        <Container  >
+        <Container fluid style={styles.backgroundImg} >
             <div id='about' style={styles.containerEl}>
-                <Row className=' h-100 d-flex '>
-                    <Col sm={12} className='text-center '>
+                <Row>
+                    <Col className='text-center '>
                         <h1 style={isMediumScreen? styles.bigScreenNameP : styles.nameP}><span style={styles.greet}>Hi, I'm</span> David Carbajal</h1>
                     </Col>
-                    <Col m={12} lg={5} >
+                </Row>
+                <Row className=' h-100  '>
+                    <Col m={12} lg={5} style={isInBetweenSizes? styles.namePic : styles.undoNamePic}  >
                         <Row>
                             <Col xs={12}>
                                 <div className=' d-flex justify-content-center mb-5 '>
@@ -242,12 +256,12 @@ export default function About() {
                             </Col>
                         </Row>
                         <Row className='mb-4'>
-                            <Col xs={6}  className='d-flex justify-content-center'>
+                            <Col xs={6}  className='d-flex justify-content-center test'>
                                 <div>
                                     <Button style={{...styles.btn, marginLeft: '70px'}} variant="primary">Contact</Button>{' '}
                                 </div>
                             </Col>
-                            <Col className='d-flex justify-content-center'>
+                            <Col xs={6}className='d-flex justify-content-center test'>
                                 <a href="../assets/resume/DAVID_CARBAJAL_RESUME (1).pdf" download>
                                     <Button style={{...styles.btn, marginRight: '70px'}} variant="primary">Resume</Button>{' '}
                                 </a>
@@ -257,20 +271,18 @@ export default function About() {
                     </Col>
                     <Col>
                         <div>
-                            {/* <p style={styles.greet} className="fs-5 "> Hello! My name is </p>
-                            <p style={styles.nameP} >Luis David Carbajal</p> */}
                             <HeadingAnimation classH={isMediumScreen? 'mb-3 text-center' : 'mb-3'} label={'Web Developer'} />
                             {/* fs-5 text-center */}
                             <div className='slideLeft'>
-                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center " : "fs-5 "}>
+                                <p style={styles.pColor} className={isSmallScreen? "fs-6 text-center" : "fs-5 "}>
                                     I am a full-stack developer who specializes in backend procedures, such as handeling api routes and managing databases.
                                     I started my programming journey via a bootcamp where I learned the fundamentals of web development.              
                                 </p>
-                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center" : "fs-5 "}>
+                                <p style={styles.pColor} className={isSmallScreen? "fs-6 text-center" : "fs-5 "}>
                                     Aside from all of the technologies I have learned from the bootcamp, I learned that coding is all about being a problem solver.
                                     I came in with a mindset that everything is solvable and that really pushed me forward.
                                 </p> 
-                                <p style={styles.pColor} className={isSmallScreen? "fs-5 text-center " : "fs-5 "}>
+                                <p style={styles.pColor} className={isSmallScreen? "fs-6 text-center " : "fs-5 "}>
                                     When I'm not coding away, I like to play video games, exercise, and expand my knowledge in the world of real estate.
                                 </p>
                             </div>
@@ -281,7 +293,7 @@ export default function About() {
 
 
             {/* portfolio */}
-            <div id='portfolio' style={isSmallScreen ? styles.smallScreen : isInBetweenSizes ? styles.inBetweenSizes : styles.containerEl}>
+            <div className={isShortHeight? 'shortView' : isMediumHeight? 'mediumView' : 'mt-4'} id='portfolio' style={isSmallScreen ? styles.smallScreen : isInBetweenSizes ? styles.inBetweenSizes : styles.containerEl}>
                 <Row >
                     <Col>
                         <HeadingAnimation classH={'text-center mb-3'} label={'Portfolio'} />
