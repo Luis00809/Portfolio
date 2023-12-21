@@ -256,7 +256,9 @@ export default function About() {
                         <Row className='mb-4'>
                             <Col xs={6}  className='d-flex justify-content-center test'>
                                 <div>
-                                    <Button style={{...styles.btn, marginLeft: '70px'}} variant="primary">Contact</Button>{' '}
+                                    <a href='#contact'>
+                                        <Button style={{...styles.btn, marginLeft: '70px'}} variant="primary">Contact</Button>{' '}
+                                    </a>
                                 </div>
                             </Col>
                             <Col xs={6}className='d-flex justify-content-center test'>
