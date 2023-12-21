@@ -10,13 +10,11 @@ import Button from 'react-bootstrap/Button';
 
 import { useMediaQuery } from 'react-responsive';
 
-
-
 import { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 
-
 import "../styles/resume.css";
+import validateEmail from '../utils/helpers'
 
 const project = [
     {
