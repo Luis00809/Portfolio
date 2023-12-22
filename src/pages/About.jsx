@@ -166,6 +166,9 @@ const styles = {
     },
     undoNamePic: {
         border: 'none'
+    },
+    skillConFlow: {
+        overflowX: 'hidden',
     }
 
     
@@ -312,14 +315,14 @@ export default function About() {
             <div id='skills' style={styles.containerEl} className=' d-flex flex-column justify-content-center'>
                 <Row>
                     <Col>
-                        <div >
+                        <div>
                             <HeadingAnimation classH={'mb-3 text-center'} label={'Skills'} />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <div className='skills-container'>
+                        <div className='skills-container' style={styles.skillConFlow}>
                             <SkillsList />
                         </div>
                     </Col>

@@ -47,7 +47,7 @@ function Cardlist(props) {
 
       return (
         <div className="container ">
-     <div className="d-flex flex-wrap justify-content-center gx-2">
+      <div className="d-flex flex-wrap justify-content-center gx-2">
        {props.project.map(item => {
          const { ref, inView } = useInView({
            triggerOnce: true, // Change this if you want the animation to trigger again whenever it comes in view

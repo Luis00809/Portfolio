@@ -31,7 +31,7 @@
                 </div>
                 <div style={styles.boxSize} className="col-4">
                     <a target="_blank" href="https://www.linkedin.com/in/luis-david-carbajal-655080233">
-                        <img style={styles.imgSize} src="https://pngimg.com/d/linkedIn_PNG8.png"/>
+                        <img style={styles.imgSize} src='../assets/images/linkedInLogo.png' />
                     </a>
                 </div>
                 <div style={styles.boxSize} className="col-4">
