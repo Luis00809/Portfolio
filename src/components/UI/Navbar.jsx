@@ -5,6 +5,9 @@ import Col from 'react-bootstrap/Col';
 
 import "../../styles/resume.css"
 
+import { useMediaQuery } from 'react-responsive';
+
+
 
 const styles = {
   containerStyle: {
@@ -18,12 +21,14 @@ const styles = {
   }
 }
 
- function NavSection() {   
+ function NavSection() { 
+  const smallScreen = useMediaQuery({ query: '(max-width: 576px)' });
+  
     return (
       <Container style={styles.containerStyle} fluid >
         <Row>
           <Col>
-                <Nav className="justify-content-end" activeKey="/home">
+                <Nav className={smallScreen? 'justify-content-center' : 'justify-content-end'} activeKey="/home">
                 <Nav.Item >
                   <Nav.Link className='navI' style={styles.navs}  href="#about">About</Nav.Link>
                 </Nav.Item>
