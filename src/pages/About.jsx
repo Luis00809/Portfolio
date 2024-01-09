@@ -41,18 +41,18 @@ const project = [
     },
     {
         id: 4,
-        name: "Note Taker",
-        description: "Note Taker",
-        src: '../assets/images/noteTaker2.png',
-        link: "https://note-taker-system-05e719970f34.herokuapp.com/notes"
-
-    },
-    {
-        id: 5,
         name: "Weather Tracker",
         description: "Global Weather Report",
         src: '../assets/images/weatherTracker2.png',
         link: "https://luis00809.github.io/Weather-Application/"
+    },
+    {
+        id: 5,
+        name: "Hoarder's Corner",
+        description: "Collection Tracker",
+        src: '../assets/images/hoarders.png',
+        link: "https://hoarders-a005c08b9ff3.herokuapp.com/"
+
     },
     {
         id: 6,

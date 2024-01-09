@@ -18,6 +18,10 @@ const styles = {
   navs: {
     fontFamily: 'open sans',
     fontSize: '20px'
+  },
+  smallScreenNavs: {
+    fontFamily: 'open sans',
+    fontSize: '15px'
   }
 }
 
@@ -30,16 +34,16 @@ const styles = {
           <Col>
                 <Nav className={smallScreen? 'justify-content-center' : 'justify-content-end'} activeKey="/home">
                 <Nav.Item >
-                  <Nav.Link className='navI' style={styles.navs}  href="#about">About</Nav.Link>
+                  <Nav.Link className='navI' style={smallScreen? styles.smallScreenNavs : styles.navs}  href="#about">About</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className='navI' style={styles.navs} href="#portfolio" eventKey="link-1">Projects</Nav.Link>
+                  <Nav.Link className='navI' style={smallScreen? styles.smallScreenNavs : styles.navs} href="#portfolio" eventKey="link-1">Projects</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className='navI' style={styles.navs} href="#skills" eventKey="link-1">Skills</Nav.Link>
+                  <Nav.Link className='navI' style={smallScreen? styles.smallScreenNavs : styles.navs} href="#skills" eventKey="link-1">Skills</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className='navI' style={styles.navs} href="#contact" eventKey="link-1">Contact</Nav.Link>
+                  <Nav.Link className='navI' style={smallScreen? styles.smallScreenNavs : styles.navs} href="#contact" eventKey="link-1">Contact</Nav.Link>
                 </Nav.Item>
                 </Nav>
           </Col>
